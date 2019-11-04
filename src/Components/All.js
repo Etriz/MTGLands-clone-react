@@ -3,9 +3,11 @@ import CardItem from "./CardItem";
 
 class All extends Component {
   render() {
+    // console.log({ allLands: this.props.allLands });
+
     return (
-      <ul>
-        <CardItem name="name" />
+      <ul id="listArea">
+        <CardItem allLands={this.props.allLands} />
       </ul>
     );
   }
