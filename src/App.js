@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ButtonArea from "./Components/ButtonArea.js";
 import All from "./Components/All.js";
-import "./App.css";
 
 class App extends Component {
   //   type: ["check", "shock", "gate", "scry", "castle"],
@@ -122,13 +121,12 @@ class App extends Component {
       console.log(`State is empty`);
     } else {
       this.showLands();
-      let format = this.state.format[0].toLowerCase();
+      let format = elem.toLowerCase();
       const result = this.state.allLands.filter(item => item.legalities[format] === "legal");
       this.setState({ someLands: result });
       // console.log(`${format} Filter Clicked`);
     }
   };
-  type = () => {};
 
   render() {
     const listStyle = {

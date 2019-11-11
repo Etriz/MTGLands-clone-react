@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class ButtonArea extends Component {
+export default class Nav extends Component {
   render() {
     return (
       <nav className="navbar bg-dark ">

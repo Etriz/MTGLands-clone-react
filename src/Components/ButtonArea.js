@@ -14,7 +14,11 @@ class ButtonArea extends Component {
     const state = this.props.state;
     const btnFormatGroup = state.format.map(item => {
       return (
-        <button key={item} onClick={this.props.legal} id={item} className="btn btn-dark m-1">
+        <button
+          key={item}
+          onClick={() => this.props.legal(item)}
+          id={item}
+          className="btn btn-dark m-1">
           {item}
         </button>
       );
@@ -27,8 +31,8 @@ class ButtonArea extends Component {
       );
     });
     return (
-      <div className="buttonArea fixed-top">
-        <div className="text-dark font-weight-bold">MTG Lands Clone</div>
+      <div id="buttonArea" className="fixed-top ">
+        <div className="text-dark font-weight-bold">test title</div>
         <br />
         <button onClick={this.props.getAllCards} className="btn btn-dark m-1">
           Fetch

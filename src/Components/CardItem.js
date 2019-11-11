@@ -11,10 +11,20 @@ class CardItem extends Component {
     //     return elem.color_identity[0] + elem.color_identity[1];
     //   }
     // };
+    const identity = i => {
+      let color = "";
+      i.color_identity.forEach(element => {
+        color += element;
+      });
+      if (color === "") {
+        color = "C";
+      }
+      return color;
+    };
     const cardItems = this.props.allLands.map(item => {
       return (
         <li key={item.name}>
-          {item.name} {item.color_identity[0] + item.color_identity[1] || "C"}
+          {item.name} {identity(item)}
         </li>
       );
     });
