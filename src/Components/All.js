@@ -6,9 +6,11 @@ class All extends Component {
     // console.log({ allLands: this.props.allLands });
 
     return (
-      <ul id="listArea">
-        <CardItem allLands={this.props.allLands} />
-      </ul>
+      <div id="listArea" className="container">
+        <ul className="row">
+          <CardItem allLands={this.props.allLands} />
+        </ul>
+      </div>
     );
   }
 }

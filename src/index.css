@@ -22,10 +22,10 @@ li {
   background: #bada55;
 }
 #listArea {
-  --top: 225px; /* to be able to be changed with JS */
+  --top: 220px; /* to be able to be changed with JS */
+  margin: 0 auto;
   margin-top: var(--top);
   /* height: calc(100vh - var(--top)); */
-  overflow: auto;
 }
 .App {
   text-align: center;

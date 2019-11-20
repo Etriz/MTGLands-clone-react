@@ -25,7 +25,11 @@ class ButtonArea extends Component {
     });
     const btnTypeGroup = Object.keys(state.type).map(item => {
       return (
-        <button key={item} id={item} className="btn btn-dark m-1">
+        <button
+          key={item}
+          onClick={() => this.props.type(item)}
+          id={item}
+          className="btn btn-dark m-1">
           {item}
         </button>
       );

@@ -23,8 +23,13 @@ class CardItem extends Component {
     };
     const cardItems = this.props.allLands.map(item => {
       return (
-        <li key={item.name}>
-          {item.name} {identity(item)}
+        <li key={item.name} className="col-6 px-2">
+          <div className="card my-1">
+            <div className="card-body text-dark p-1">
+              {/* <img src={item.image_uris.border_crop} alt="" /> */}
+              {item.name} {identity(item)}
+            </div>
+          </div>
         </li>
       );
     });

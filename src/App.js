@@ -124,19 +124,24 @@ class App extends Component {
       let format = elem.toLowerCase();
       const result = this.state.allLands.filter(item => item.legalities[format] === "legal");
       this.setState({ someLands: result });
-      // console.log(`${format} Filter Clicked`);
+    }
+  };
+  type = elem => {
+    if (this.state.allLands.length === 0) {
+      //do nothing if state is empty
+      console.log(`State is empty`);
+    } else {
+      this.showLands();
+      let type = [...this.state.type[elem]];
+      const result = this.state.allLands.filter(item => type.includes(item.name));
+      this.setState({ someLands: result });
     }
   };
 
   render() {
-    const listStyle = {
-      // padding: "3px 6px",
-      background: "cyan",
-      marginTop: "500px",
-    };
     let displayAllJS = null;
     if (this.state.showLands === true) {
-      displayAllJS = <All allLands={this.state.someLands} style={listStyle} />;
+      displayAllJS = <All allLands={this.state.someLands} />;
     }
 
     return (
@@ -146,6 +151,7 @@ class App extends Component {
           getAllCards={this.getAllCards}
           clearLands={this.clearLands}
           legal={this.legal}
+          type={this.type}
         />
         {displayAllJS}
       </div>
